@@ -8,6 +8,8 @@ jobs:
     steps:
     - name: 'Invoke Action'
       uses: 'bencord0/actions-hello@production'
+      with:
+        salutation: 'Hi'
       id: greeting
     - run: |
         echo "The greeting was: ${{ steps.greeting.outputs.greeting }}"
