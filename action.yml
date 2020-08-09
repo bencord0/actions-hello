@@ -9,7 +9,12 @@ inputs:
   subject:
     description: 'The target of the greeting'
     default: 'World'
+outputs:
+  greeting:
+    description: 'The generated greeting'
 runs:
   using: 'Docker'
   image: 'docker://gentoo/stage3-amd64:latest'
-  args: [ 'echo', "${{ inputs.salutation }} ${{ inputs.subject }}"]
+  args:
+  - 'echo'
+  - '::set-output name=greeting::${{ inputs.salutation }} ${{ inputs.subject }}'
