@@ -1,0 +1,10 @@
+---
+name: 'Hello World'
+on: push
+jobs:
+  hello:
+    name: 'Create Greeting'
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Invoke Action'
+      uses: 'bencord0/actions-hello@production'
