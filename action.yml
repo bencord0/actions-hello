@@ -1,0 +1,15 @@
+---
+# action.yml
+name: 'Hello World'
+description: 'An example GitHub Action'
+inputs:
+  salutation:
+    description: 'The greeting to use'
+    default: 'Hello'
+  subject:
+    description: 'The target of the greeting'
+    default: 'World'
+runs:
+  using: 'Docker'
+  image: 'docker://gentoo/stage3-amd64:latest'
+  args: [ 'echo', "${{ inputs.salutation }} ${{ inputs.subject }}"]
